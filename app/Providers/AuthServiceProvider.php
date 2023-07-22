@@ -29,17 +29,18 @@ class AuthServiceProvider extends ServiceProvider
     {
         //
         //$this->registerPolicies();
-
-        Gate::define('my-product', function(User $user,Product $product){
-            return $user->id === $product->user_id;
-        });
+         //only the user(products owner can see the products)
+        // Gate::define('my-product', function(User $user,Product $product){
+        //     return $user->id === $product->user_id;
+        // });
 
         //this gate allow only Mawuli to create new user
     //    {{ auth()->user() != null ? auth()->user()->name : "Guest" }}</span>
        //this allow only admin to create user
        
-       Gate::define('can-create',function(User $user){
-        return $user->roles[0]->name === "admin"; 
-   });
+//        Gate::define('can-create',function(User $user){
+//         return $user->roles[0]->name === "admin"; 
+//    });
+
     }
 }

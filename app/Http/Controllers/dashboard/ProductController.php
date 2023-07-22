@@ -28,7 +28,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $this->authorize('can-create');
+        $this->authorize('create',Product::class);
         return view('dashboard.products.create');
     }
 
@@ -37,7 +37,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $this->authorize('can-create');
+        $this->authorize('create',Product::class);
         $request->validate([
             'name' => ['required'],
             'price'=> ['required'],

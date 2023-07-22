@@ -26,7 +26,7 @@
     <tbody>
    
         @foreach ($products as $product)
-        @can('my-product',$product)
+        @can('view',$product)
         <tr>
             <td>{{ $product->name }}</td>
             <td>{{ $product->price }}</td>
